@@ -1,17 +1,17 @@
 import express from "express";
 import {
     createLog,
-    getAllMeals,
-    updateMeal,
     deleteMeal,
+    getAllMeals,
     getMeal,
-    searchMeal
+    searchMeal,
+    updateMeal,
 } from "../controllers/mealController.js";
 import { protectRoute } from "../middleware/protectRoute.js";
 
 const router = express.Router();
 
-router.post("/create",protectRoute, createLog);
+router.post("/create", protectRoute, createLog);
 router.get("/getLogs", protectRoute, getAllMeals);
 router.get("/getLog/:id", protectRoute, getMeal);
 router.put("/update/:id", protectRoute, updateMeal);
